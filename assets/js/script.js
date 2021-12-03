@@ -9,10 +9,10 @@ function pricecalculator(){
 
     if(km != 0){
         if ((under18==true)&&(over65==false)){
-            document.getElementById("result").innerHTML = pricebykm - ((pricebykm / 100)*20)+ "€";
+            document.getElementById("result").innerHTML = (pricebykm - ((pricebykm / 100)*20)).toFixed(2)+ "€";
     
         }else if ((under18==false)&&(over65==true)){
-            document.getElementById("result").innerHTML = pricebykm - ((pricebykm / 100)*40)+ "€";
+            document.getElementById("result").innerHTML = (pricebykm - ((pricebykm / 100)*40)).toFixed(2)+ "€";
         }
         else if ((under18==false)&&(over65==false)){
             document.getElementById("result").innerHTML = pricebykm.toFixed(2) + "€" ;
@@ -31,13 +31,20 @@ function promptdata(){
     let age = prompt("Inserisci l'eta' del conducente")
     let pricebykm = km * 0.21;
 
-    if (age<18){
-        document.getElementById("result").innerHTML = pricebykm - ((pricebykm / 100)*20)+ "€";
+    if ((km != 0) && (age!=0)){
+        if (age<18){
+            document.getElementById("result").innerHTML = (pricebykm - ((pricebykm / 100)*20)).toFixed(2)+ "€";
+            pricebykm = pricebykm.toFixed(2)
+    
+        }else if (age>=65){
+            document.getElementById("result").innerHTML = (pricebykm - ((pricebykm / 100)*40)).toFixed(2)+ "€";
+            pricebykm = pricebykm.toFixed(2)
+        }
+        else{
+            document.getElementById("result").innerHTML = pricebykm.toFixed(2)+ "€" ;
+        }
 
-    }else if (age>=65){
-        document.getElementById("result").innerHTML = pricebykm - ((pricebykm / 100)*40)+ "€";
-    }
-    else{
-        document.getElementById("result").innerHTML = pricebykm.toFixed(2)+ "€" ;
+    }else{
+        document.getElementById("result").innerHTML = "Inserire tutti i dati richiesti per utilizzare il nostro calcolatore" ;
     }
 }
