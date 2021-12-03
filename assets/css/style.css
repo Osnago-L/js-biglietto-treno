@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.wallpaper-fs{
+    background-image: url("https://s2.best-wallpaper.net/wallpaper/2560x1440/1907/Bridge-train-mountains-vector-art-picture_2560x1440.jpg");
+    background-position: center;
+    height: 100vh;
+    position: relative;
+}
+
+.calculator-container{
+    background-color: white;
+    border-radius: 20px 20px;
+    border: 2px solid blueviolet;
+    padding: 20px;
+    width: 300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

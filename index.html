@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Price Checker</title>
+</head>
+<body>
+
+        <div class="wallpaper-fs">
+          <div class="calculator-container">
+            <h4>Price Calculator</h4>
+            <div class="form-text">Il prezzo verra definito in base ai chilometri da percorrere e l'eta' del passeggero.</div>
+            <div class="form-text mb-3">La tariffa e' di 0,21€/km. Viene applicato uno sconto di 20% per i minorenni o 40% per over 65</div>
+            <div class="mb-3">
+              <input type="number" placeholder="Chilometri" id="km-percorso">
+              <button onclick="promptdata()">Prompt</button>
+            </div>
+            
+            <div class="mb-3">
+              <div>
+                  <input type="checkbox" id="under-18">
+                  <label >Minorenne</label>
+              </div>
+              <div>
+                  <input type="checkbox" id="over-65">
+                  <label >Over 65</label>
+              </div>
+            </div>
+            <div id="result" class="mb-3 form-text text-danger"></div>
+            <button type="submit" class="btn btn-primary" onclick="pricecalculator()">Calcola Prezzo</button>
+          </div>
+        </div>
+      <script src="assets/js/script.js"></script>
+</body>
+</html>
